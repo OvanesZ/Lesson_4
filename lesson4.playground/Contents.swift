@@ -50,3 +50,13 @@ class SportCar: Car {
         super.init(brand: brand, color: color, transmission: transmission, km: km)
     }
 }
+
+
+class TrunkCar: Car {
+    var maxTrunkVolume: Int
+    init(brand: String, color: UIColor, transmission: Transmission, km: Double, maxTrunkVolume: Int) {
+        self.maxTrunkVolume = maxTrunkVolume
+        super.init(brand: brand, color: color, transmission: transmission, km: km)
+    }
+    
+}
