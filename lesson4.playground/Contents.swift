@@ -88,3 +88,19 @@ class TrunkCar: Car {
 }
 
 
+var sportCar1 = SportCar(brand: "audi", color: .blue, transmission: .auto, km: 10.0, diskRadius: 19.0, levelPetrol: 51, isEngineState: .start)
+
+var sportCar2 = SportCar(brand: "ww", color: .black, transmission: .manual, km: 100.0, diskRadius: 17.0, levelPetrol: 45, isEngineState: .stop)
+
+var trunkCar1 = TrunkCar(brand: "volvo", color: .white, transmission: .auto, km: 1000.0, maxTrunkVolume: .max)
+
+
+sportCar1.levelPetrol = 30
+print(sportCar1)
+
+print(trunkCar1)
+
+
+
+
+
