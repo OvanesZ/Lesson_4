@@ -39,5 +39,14 @@ class Car {
     static func Cars() {
         
     }
+}
+
+
+class SportCar: Car {
+    var diskRadius: Double
     
+    init(brand: String, color: UIColor, transmission: Transmission, km: Double, diskRadius: Double) {
+        self.diskRadius = diskRadius
+        super.init(brand: brand, color: color, transmission: transmission, km: km)
+    }
 }
