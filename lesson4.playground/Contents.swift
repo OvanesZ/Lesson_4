@@ -10,6 +10,7 @@ enum Transmission {
 enum MovableObject {
     case windows (WindowsAction)
     case doors (DoorsAction)
+    case engine (EngineState)
 }
 
 enum WindowsAction {
@@ -18,6 +19,10 @@ enum WindowsAction {
 
 enum DoorsAction {
     case open, close
+}
+
+enum EngineState {
+    case start, stop
 }
 
 
@@ -44,12 +49,33 @@ class Car {
 
 class SportCar: Car {
     var diskRadius: Double
+    var levelPetrol: Double
+    var isEngineState: EngineState
     
-    init(brand: String, color: UIColor, transmission: Transmission, km: Double, diskRadius: Double) {
+    init(brand: String, color: UIColor, transmission: Transmission, km: Double, diskRadius: Double, levelPetrol: Double, isEngineState: EngineState) {
         self.diskRadius = diskRadius
+        self.levelPetrol = levelPetrol
+        self.isEngineState = isEngineState
         super.init(brand: brand, color: color, transmission: transmission, km: km)
-    }
-}
+        
+        func engineStart() {
+            if levelPetrol > 50 {
+                print("Запуск разрешен")
+                EngineState.start
+            }
+        }
+        
+        func engineStop() {
+            if levelPetrol < 50 {
+                print("Запуск запрещен")
+                EngineState.stop
+            }
+        }
+        
+            }
+        }
+        
+    
 
 
 class TrunkCar: Car {
@@ -60,3 +86,5 @@ class TrunkCar: Car {
     }
     
 }
+
+
